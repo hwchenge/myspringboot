@@ -1,0 +1,7 @@
+*.project
+*.classpath
+*.prefs
+myspringboot-parent/myspringboot-service/target
+myspringboot-parent/myspringboot-web/target
+myspringboot-parent/target
+myspringboot-parent/myspringboot-web/.settings

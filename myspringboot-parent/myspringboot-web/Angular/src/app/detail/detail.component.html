@@ -1,0 +1,30 @@
+<p-table [columns]="cols" [value]="hero" [(selection)]="selectedCars3" dataKey="vin" (onRowSelect)="onRowSelect($event)" (onRowUnselect)="onRowUnselect($event)">
+    <ng-template pTemplate="header" let-columns>
+        <tr>
+            <th style="width: 3em">
+                <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+            </th>
+            <th *ngFor="let col of columns">
+                {{col.header}}
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+        <tr [pSelectableRow]="rowData">
+            <td>
+                <p-tableCheckbox [value]="rowData"></p-tableCheckbox>
+            </td>
+            <td *ngFor="let col of columns">
+                {{rowData[col.field]}}
+            </td>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="summary">
+        <ul>
+            <li *ngFor="let car of selectedCars3" style="text-align: left">
+                {{car.vin + ' - ' + car.brand + ' - ' + car.year + ' - ' + car.color}}
+            </li>
+        </ul>
+    </ng-template>
+  </p-table>
+  <button label="Click" (click)="handleClick1($event)"></button>
